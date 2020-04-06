@@ -1,0 +1,35 @@
+{
+  "name": "catoi",
+  "version": "1.0.0",
+  "description": "catoi",
+  "main": "webpack.config.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.9.4",
+    "html-webpack-plugin": "^4.0.4",
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.9.4",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lylong93/coati.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lylong93/coati/issues"
+  },
+  "homepage": "https://github.com/lylong93/coati#readme"
+}

@@ -1,25 +1,29 @@
-function One(params) {
+import Catoi  from './main'
+
+function App() {
+    this.state = {
+        adc:123
+    }
+    this.methods = {
+        click:() =>{
+           this.state.abc = 456
+           console.log(this.state.abc)
+        }
+    }
     return (
-        <div>
-            one
-        </div>
-    )    
+        '<div>{abc}</div>'
+    )
 }
 
-function Tow(obj) {
-    return (
-        <div>
-            tow
-        </div>
-    )    
-}
-function getSate() {
-    
-}
-function App() {
-    return (
-        <div>
-            <One></One>
-        </div>
-    )    
-}
+let mydom = new App()
+
+let app = document.getElementById('app')
+let catoi = new Catoi({fn:App,el:app})
+
+catoi.parse()
+
+let obtn = document.getElementById('btn')
+obtn.addEventListener('click',function () {
+    // mydom.methods.click()//模拟点击
+    catoi.nerve.change()
+})
