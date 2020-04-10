@@ -3,6 +3,7 @@ class Token {
         this.start
         this.end
         this.type
+        this.value
     }
 }
 
@@ -15,7 +16,7 @@ class Tokenizer {
 
     }
     pushToken() {
-
+        this.tokens.push(new Token())
     }
 }
 
