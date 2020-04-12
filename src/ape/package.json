@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "acorn": "^7.1.1",
-    "acron": "^1.0.5",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
