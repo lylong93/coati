@@ -13,3 +13,5 @@ add emoji :smile:
 一个简单的玩具框架
 
 A simple toy framework 
+
+functon -> ast -> soul -> memory
