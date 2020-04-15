@@ -1,0 +1,1 @@
+import {rednerErrer} from './errer'
