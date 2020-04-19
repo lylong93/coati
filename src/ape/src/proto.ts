@@ -5,12 +5,10 @@ function acornApe(Parser:any): any{
     return class extends Parser {
         parse() {
             const ast = super.parse()
-            console.log(ast.body)
             return this.combine(ast)   
         }
-        combine(ast:Object) {
-            let d =''
-            discern(d)
+        combine(ast:string) {
+            discern(ast)
             return ast
         }
     }

@@ -1,43 +1,48 @@
 //解析模板
-let regexStart=/\<(?!\/).*?\>/
-let regexEnd  =/<\/.*?>/
+const regexStart = /\<(?!\/).*?\>/
+const regexEnd = /<\/.*?>/
 
-let nomel = /.*?(?=\<)/
+const nomel = /.*?(?=\<)/
 
-let arr =[]
-function discern (params:string) :Object{
-    let html = params.replace(/\n/g,"")
-    console.log(html)
-    console.log(html.match(nomel))
-    // return 
+const arr:Array<string> = []
+
+function discern(params: any): Object {
+    console.log('oooo',params)
+    let body: any = params.body.pop()
+    let s: string = body.body.body.pop().argument.value
+    console.log(s)
+    let html = s.replace(/\n/g, "")
+
     const len = html.length
-    let match  = html.match(regexStart)
-    // console.log(match[0],match.index)
-    function step(num:number) {
-        html  = html.substring(num)
+    let match = html.match(regexStart)
+
+    function step(num: number) {
+        html = html.substring(num)
     }
+    function tan() {
+        while (html) {
+            if (html.match(regexStart) && html.match(regexStart).index === 0) {
+                arr.push(html.match(regexStart)[0])
+                step(html.match(regexStart)[0].length)
+                continue
+            }
 
+            if (html.match(regexEnd) && html.match(regexEnd).index === 0) {
+                arr.push(html.match(regexEnd)[0])
+                step(html.match(regexEnd)[0].length)
+                continue
+            }
 
-    while (html) {
-        debugger
-        if(html.match(regexStart) && html.match(regexStart).index === 0 ) {
-            arr.push(html.match(regexStart)[0])
-            step(html.match(regexStart)[0].length)
-            continue
-        }
-
-        if(html.match(regexEnd) && html.match(regexEnd).index === 0) {
-            arr.push(html.match(regexEnd)[0])
-            step(html.match(regexEnd)[0].length)
-            continue
-        }
-
-        if(html.match(nomel)  && html.match(nomel).index === 0) {
-            arr.push(html.match(nomel)[0])
-            step(html.match(nomel)[0].length)
-            continue
+            if (html.match(nomel) && html.match(nomel).index === 0) {
+                arr.push(html.match(nomel)[0])
+                step(html.match(nomel)[0].length)
+                continue
+            }
         }
     }
+    tan()
+
+    console.log('arr',arr)
     return {}
 }
 
