@@ -1,5 +1,6 @@
 import {Parser} from 'acorn'
 import discern from './discern'
+import jsx from './jsx'
 //acorn 注入插件
 function acornApe(Parser:any): any{
     return class extends Parser {

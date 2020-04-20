@@ -9,10 +9,6 @@ let code  =
 }
 `
 
-// function app () {
-//     return <div></div>
-// }
-// code = app.toString()
 console.log(code)
 
 
