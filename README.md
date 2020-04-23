@@ -15,3 +15,5 @@ add emoji :smile:
 A simple toy framework 
 
 functon -> ast -> soul -> memory
+
+trip 打包器
